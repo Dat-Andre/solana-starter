@@ -19,7 +19,7 @@ const mint = new PublicKey("E63bZBXSFv4vhBsgVueWKq27Dy9EBBibz5jpBNb2vhtN");
         // Mint to ATA
         const ata = await getOrCreateAssociatedTokenAccount(connection, keypair, mint, keypair.publicKey);
         console.log(`Your ata is: ${ata.address.toBase58()}`);
-        const mintToMyself = await mintTo(connection, keypair, mint, ata.address, keypair, 1n * token_decimals);
+        const mintToMyself = await mintTo(connection, keypair, mint, ata.address, keypair, 10n * token_decimals);
         console.log(`Your mint txid: ${mintToMyself}`);
         
         const myBalance = await connection.getTokenAccountBalance(ata.address);
